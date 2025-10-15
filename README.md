@@ -1,115 +1,90 @@
-🤖 AI Chatbot — Chat + OCR Assistant
+# 🤖 AI Chatbot — Text + Vision (TinyDolphin + EasyOCR)
 
-This project is a Streamlit-based AI assistant that combines text-based chat with image text extraction (OCR) using the tinydolphin model via Ollama and EasyOCR.
+This project is a **Streamlit-based AI assistant** that combines text-based chat and image text extraction (OCR).  
+It uses the **TinyDolphin model** through Ollama for chat and **EasyOCR** for image understanding.  
 
-It allows users to:
+---
 
-💬 Chat with an AI model locally via Ollama (tinydolphin).
+## 🌟 Features
+- 🧠 **AI Chat Interface** — Talk with the TinyDolphin model locally via Ollama.  
+- 🖼️ **Image Text Extraction (OCR)** — Upload images and extract visible text using EasyOCR.  
+- 💬 **Chat History** — Maintain your conversations with session state.  
+- 🛑 **Stop Generation** — Interrupt model responses in real-time.  
+- 🎨 **Custom UI Design** — Styled with CSS for a modern chat interface.  
+- 🚀 **Streamed Responses** — Watch answers generate live.  
 
-🖼️ Upload an image and automatically extract text using EasyOCR.
+---
 
-📜 Maintain chat history with session state.
+## 🧩 Tech Stack
+| Component      | Description |
+|----------------|-------------|
+| Frontend/UI    | Streamlit |
+| Backend Model  | Ollama running TinyDolphin |
+| OCR Engine     | EasyOCR |
+| Language       | Python 3.9+ |
+| Libraries Used | streamlit, ollama, easyocr, Pillow, numpy, datetime |
 
-🎨 Interact via a clean, modern chat interface styled like ChatGPT.
+---
 
-🌟 Features
+## ⚙️ Installation & Setup
 
-🧠 AI Chat Interface — Interact with the tinydolphin model directly from the browser.
-
-🖼️ Image Text Extraction (OCR) — Upload images and extract text instantly using EasyOCR.
-
-💬 Chat History — Save, view, and restore previous conversations.
-
-🗑️ Clear History — Reset or start a fresh chat anytime.
-
-🎨 Custom UI Design — Enhanced with CSS for a ChatGPT-like look.
-
-🚀 Responsive Layout — Works smoothly on both desktop and mobile.
-
-🧩 Tech Stack
-Component	Description
-Frontend/UI	Streamlit
-Backend Model	Ollama running tinydolphin
-OCR Engine	EasyOCR
-Language	Python 3.9+
-Libraries Used	streamlit, ollama, easyocr, Pillow, numpy, datetime
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/yourusername/AI-Chatbot.git
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/AI-Chatbot.git
 cd AI-Chatbot
-
-2️⃣ Install Dependencies
-
+2. Install Dependencies
 Make sure you have Python 3.9+ installed.
-Install required libraries:
 
+bash
+Copy code
 pip install -r requirements.txt
+3. Install and Run Ollama
+You need to have Ollama installed and the TinyDolphin model available locally.
 
+Install Ollama → Ollama official site
 
-requirements.txt example:
+Pull TinyDolphin Model
 
-streamlit==1.50.0
-ollama
-easyocr==1.7.2
-Pillow==10.0.0
-numpy==1.24.0
-
-3️⃣ Install and Run Ollama
-
-Download and install Ollama from its official website
-.
-
-Pull the tinydolphin model:
-
+bash
+Copy code
 ollama pull tinydolphin
+Run Ollama Server
 
-
-Start Ollama server:
-
+bash
+Copy code
 ollama serve
+This starts Ollama’s local API at http://localhost:11434.
 
+▶️ Run the App
+Once Ollama is running, start the Streamlit app:
 
-This starts the local API at http://localhost:11434.
-
-4️⃣ Run the App
-
-Start the Streamlit chatbot:
-
+bash
+Copy code
 streamlit run app.py
-
-
-Then open the link shown in the terminal (usually http://localhost:8501
-).
+Then open the link shown in the terminal (usually http://localhost:8501).
 
 🧠 How It Works
-🔹 Chat Interface
+Chat Interface
+Enter text in the chat input box.
 
-Type your message in the chat box.
+The app sends your prompt to Ollama’s TinyDolphin model.
 
-The app sends your input to the tinydolphin model via Ollama API.
+Responses are streamed and displayed live.
 
-Responses are displayed in a chat-style UI.
+Image Upload (OCR)
+Upload a .jpg or .png image.
 
-🔹 Image Upload (OCR)
+EasyOCR extracts text and shows it in the chat.
 
-Upload a .jpg, .jpeg, or .png file.
-
-The app uses EasyOCR to extract text.
-
-Extracted text appears as a user message in the chat.
-
-🔹 Chat History
-
-Conversations are stored using Streamlit session state.
+Chat History
+Conversations are stored using Streamlit’s session state.
 
 You can start new chats or clear all history from the sidebar.
 
 🧑‍💻 Author
-
 Anshul Kaushal
 
-💼 GitHub: yourusername
+💼 GitHub: Your GitHub Profile
 
 📜 License
-
 This project is licensed under the MIT License — feel free to use and modify it.
