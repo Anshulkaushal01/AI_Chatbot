@@ -1,28 +1,36 @@
-# 🤖 AI Chatbot — Text + Vision (TinyDolphin + EasyOCR)
+# 🤖 AI Chatbot with OCR
 
-This project is a **Streamlit-based AI assistant** that combines text-based chat and image text extraction (OCR).  
-It uses the **TinyDolphin model** through Ollama for chat and **EasyOCR** for image understanding.  
+This project is a custom-built **AI Chatbot using Streamlit**. It integrates a powerful local language model, **Tiny Dolphin**, served via **Ollama**, and includes **Optical Character Recognition (OCR)** capabilities provided by **EasyOCR**.
+
+This application allows users to:
+- Engage in interactive conversations with the Tiny Dolphin AI model.
+- Upload images (`.png`, `.jpg`) to automatically extract text.
+- Use the extracted text as context for questions.
+- Manage and revisit past conversations through a session-based chat history.
+- Enjoy a clean, custom-styled interface for a polished user experience.
 
 ---
 
 ## 🌟 Features
-- 🧠 **AI Chat Interface** — Talk with the TinyDolphin model locally via Ollama.  
-- 🖼️ **Image Text Extraction (OCR)** — Upload images and extract visible text using EasyOCR.  
-- 💬 **Chat History** — Maintain your conversations with session state.  
-- 🛑 **Stop Generation** — Interrupt model responses in real-time.  
-- 🎨 **Custom UI Design** — Styled with CSS for a modern chat interface.  
-- 🚀 **Streamed Responses** — Watch answers generate live.  
+
+- 🧠 **Interactive AI Chat** — Have dynamic conversations with the Tiny Dolphin model running locally.
+- 🖼️ **Image Text Extraction (OCR)** — Upload an image, and the app uses EasyOCR to read and extract any text within it.
+- 💬 **Context-Aware Conversations** — Ask questions directly related to the text extracted from your uploaded images.
+- 📜 **Chat History** — The sidebar keeps a log of your recent conversations, which you can revisit or clear.
+- ✨ **Custom UI/UX** — A unique theme and modern chat components styled with custom CSS for a great look and feel.
+- 🚀 **Built with Python** — A pure Python implementation leveraging powerful libraries for AI and web development.
 
 ---
 
 ## 🧩 Tech Stack
-| Component      | Description |
-|----------------|-------------|
-| Frontend/UI    | Streamlit |
-| Backend Model  | Ollama running TinyDolphin |
-| OCR Engine     | EasyOCR |
-| Language       | Python 3.9+ |
-| Libraries Used | streamlit, ollama, easyocr, Pillow, numpy, datetime |
+
+| Component | Description |
+|---|---|
+| **Frontend/UI** | [Streamlit](https://streamlit.io) |
+| **Backend AI Model** | [Ollama](https://ollama.ai) running **Tiny Dolphin** |
+| **OCR Engine** | [EasyOCR](https://github.com/JaidedAI/EasyOCR) |
+| **Language** | Python 3.9+ |
+| **Core Libraries** | `streamlit`, `ollama`, `easyocr`, `Pillow`, `numpy` |
 
 ---
 
@@ -30,61 +38,79 @@ It uses the **TinyDolphin model** through Ollama for chat and **EasyOCR** for im
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/AI-Chatbot.git
-cd AI-Chatbot
-2. Install Dependencies
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+cd ai_chat.py
+```
+
+### 2. Install Dependencies
 Make sure you have Python 3.9+ installed.
 
-bash
-Copy code
-pip install -r requirements.txt
-3. Install and Run Ollama
-You need to have Ollama installed and the TinyDolphin model available locally.
+```bash
+pip install streamlit requests
+```
 
-Install Ollama → Ollama official site
+### 3. Install the main Python libraries
 
-Pull TinyDolphin Model
+```bash
+pip install streamlit ollama easyocr
+```
 
-bash
-Copy code
+### 4. EasyOCR may require you to install PyTorch separately.
+Visit [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/) for instructions.
+
+### 4. Install and Run Ollama
+You need to have Ollama installed and the **Tiny Dolphin model** available locally.
+
+### 5. Install Ollama
+Visit Ollama’s official website to download and install it.
+
+### 6. Pull the Tiny Dolphin Model
+```Bash
 ollama pull tinydolphin
-Run Ollama Server
+```
+#### Run the Ollama Server
+Keep this running in a separate terminal.
 
-bash
-Copy code
+```Bash
 ollama serve
-This starts Ollama’s local API at http://localhost:11434.
+```
+This starts Ollama’s local API, which the app will connect to.
 
-▶️ Run the App
-Once Ollama is running, start the Streamlit app:
+---
 
-bash
-Copy code
-streamlit run app.py
-Then open the link shown in the terminal (usually http://localhost:8501).
+### ▶️ Run the App
 
-🧠 How It Works
-Chat Interface
-Enter text in the chat input box.
+Once Ollama is running, start the Streamlit application:
 
-The app sends your prompt to Ollama’s TinyDolphin model.
+```Bash
+streamlit run your_app_name.py
+```
 
-Responses are streamed and displayed live.
+Now, open the local URL shown in your terminal (usually http://localhost:8501) in your web browser.
 
-Image Upload (OCR)
-Upload a .jpg or .png image.
+## 🧠 How It Works
+  
+  1. **Chat Interface**
+     - Users type messages into the chat input.
+     - The app sends the prompt to the local Tiny Dolphin model via the Ollama API.
+     - The model's response is displayed in the chat window.
 
-EasyOCR extracts text and shows it in the chat.
+  2. **Image Upload & OCR**
+     - A user uploads a .jpg or .png image.
+     - EasyOCR processes the image locally to extract all visible text.
+     - The extracted text is displayed in a message and is automatically pre-pended as context to the user's next chat message.
+       
+  3. **Chat History**
+     - Conversations are stored in Streamlit’s session state.
+     - You can start a new chat, which archives the current one, or view previous chats by clicking on them in the sidebar.
 
-Chat History
-Conversations are stored using Streamlit’s session state.
+## 🧑‍💻 Author
 
-You can start new chats or clear all history from the sidebar.
+**Anshul Kaushal**
 
-🧑‍💻 Author
-Anshul Kaushal
+---
 
-💼 GitHub: Your GitHub Profile
+## 📜 License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as you see fit.
 
-📜 License
-This project is licensed under the MIT License — feel free to use and modify it.
+---
