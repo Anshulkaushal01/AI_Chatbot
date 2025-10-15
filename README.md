@@ -38,7 +38,7 @@ This application allows users to:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+git clone [https://github.com/Anshulkaushal01/AI_Chatbot.git]
 cd ai_chat.py
 ```
 
@@ -83,7 +83,7 @@ This starts Ollama’s local API, which the app will connect to.
 Once Ollama is running, start the Streamlit application:
 
 ```Bash
-streamlit run your_app_name.py
+streamlit ai_chat.py
 ```
 
 Now, open the local URL shown in your terminal (usually http://localhost:8501) in your web browser.
