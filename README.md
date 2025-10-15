@@ -37,6 +37,7 @@ This application allows users to:
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the Repository
+
 ```bash
 git clone [https://github.com/Anshulkaushal01/AI_Chatbot.git]
 cd ai_chat.py
